@@ -4,11 +4,6 @@ import { Suspense } from 'react';
 // Client Components
 import Page from '../components/page.client';
 import Post from '../components/post.client';
-import Footer from '../components/footer.client';
-
-// Server Components
-import SystemInfo from '../components/server-info.server';
-// Utils
 
 import { postDataStore, postListStore } from '../lib/index';
 import Skeleton from '../components/Skeleton';
@@ -43,8 +38,6 @@ export default function News() {
       <Suspense fallback={<Skeleton />}>
         <NewsWithData />
       </Suspense>
-      <Footer />
-      <SystemInfo />
     </Page>
   );
 }
