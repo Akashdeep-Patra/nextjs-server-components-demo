@@ -1,12 +1,8 @@
 import { Suspense } from 'react';
 // Shared Components
 
-// Server Components
-import SystemInfo from '../components/server-info.server';
-
 // Client Components
 import Page from '../components/page.client';
-import Footer from '../components/footer.client';
 import Post from '../components/post.client';
 
 // Utils
@@ -42,12 +38,10 @@ export default function News() {
       <Suspense fallback={<Skeleton />}>
         <NewsWithData />
       </Suspense>
-      <Footer />
-      <SystemInfo />
     </Page>
   );
 }
 
 export const config = {
-  runtime: 'nodejs',
+  runtime: 'experimental-edge',
 };
