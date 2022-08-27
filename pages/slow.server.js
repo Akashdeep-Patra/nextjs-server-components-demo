@@ -11,12 +11,10 @@ import Post from '../components/post.client';
 
 // Utils
 
-import { postDataStore, postListStoreDelayed } from '../lib/index';
+import { postListStoreDelayed } from '../lib/index';
 import Skeleton from '../components/Skeleton';
 
-function StoryWithData({ id }) {
-  postDataStore.prefetch(id);
-  const post = postDataStore.get(id);
+function StoryWithData({ post }) {
   return (
     <Suspense fallback={<Skeleton count={1} />}>
       <Post post={post} />
@@ -32,7 +30,7 @@ function NewsWithData() {
   return (
     <>
       {postData?.data?.slice(0, 30).map((post) => {
-        return <StoryWithData id={post.id} key={post.id} />;
+        return <StoryWithData post={post} key={post.id} />;
       })}
     </>
   );
