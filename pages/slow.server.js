@@ -7,8 +7,19 @@ import Post from '../components/post.client';
 
 // Utils
 
-import { postListStoreDelayed } from '../lib/index';
 import Skeleton from '../components/Skeleton';
+
+import { getPosts } from '../lib';
+import { createFetchStore } from 'react-suspense-fetch';
+
+export const postListStoreDelayed = createFetchStore(async (_key) => {
+  const [res] = await Promise.all([
+    getPosts(),
+    new Promise((res) => setTimeout(res, 5000)),
+  ]);
+
+  return res;
+});
 
 function StoryWithData({ post }) {
   return (

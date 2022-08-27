@@ -1,12 +1,22 @@
 import { Suspense } from 'react';
+import { createFetchStore } from 'react-suspense-fetch';
+
 // Shared Components
 
 // Client Components
 import Page from '../components/page.client';
 import Post from '../components/post.client';
 
-import { postDataStore, postListStore } from '../lib/index';
+// import { postDataStore, postListStore } from '../lib/index';
 import Skeleton from '../components/Skeleton';
+import { getPostDataById, getPosts } from '../lib';
+
+export const postListStore = createFetchStore(async (_key) => {
+  return await getPosts();
+});
+export const postDataStore = createFetchStore(async (id) => {
+  return await getPostDataById(id);
+});
 
 function StoryWithData({ id }) {
   postDataStore.prefetch(id);
