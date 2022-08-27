@@ -1,7 +1,7 @@
 import { Suspense, useEffect, useState } from 'react';
 //client
-import Page from '../components/page.client.js';
-import Post from '../components/post.client.js';
+import Page from '../components/page.client';
+import Post from '../components/post.client';
 
 //mixed
 import Skeleton from '../components/Skeleton';

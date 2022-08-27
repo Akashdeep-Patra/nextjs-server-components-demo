@@ -2,10 +2,10 @@ import { Suspense } from 'react';
 // Shared Components
 
 // Client Components
-import Page from '../components/page.client.js';
-import Post from '../components/post.client.js';
-import Footer from '../components/footer.client.js';
-import ErrorPlaceholder from '../components/error-placeholder.client.js';
+import Page from '../components/page.client';
+import Post from '../components/post.client';
+import Footer from '../components/footer.client';
+import ErrorPlaceholder from '../components/error-placeholder.client';
 
 // Server Components
 import SystemInfo from '../components/server-info.server';
@@ -50,3 +50,7 @@ export default function News() {
     </Page>
   );
 }
+
+export const config = {
+  runtime: 'experimental-edge',
+};

@@ -1,6 +1,6 @@
-import Page from '../components/page.client.js';
+import Page from '../components/page.client';
 import { getPostDataById, getPosts } from '../lib/index';
-import Post from '../components/post.client.js';
+import Post from '../components/post.client';
 
 export const getServerSideProps = async () => {
   const posts = await (await getPosts()).data;

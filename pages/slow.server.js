@@ -5,10 +5,10 @@ import { Suspense } from 'react';
 import SystemInfo from '../components/server-info.server';
 
 // Client Components
-import Page from '../components/page.client.js';
-import Footer from '../components/footer.client.js';
-import ErrorPlaceholder from '../components/error-placeholder.client.js';
-import Post from '../components/post.client.js';
+import Page from '../components/page.client';
+import Footer from '../components/footer.client';
+import ErrorPlaceholder from '../components/error-placeholder.client';
+import Post from '../components/post.client';
 
 // Utils
 
@@ -51,3 +51,7 @@ export default function News() {
     </Page>
   );
 }
+
+export const config = {
+  runtime: 'experimental-edge',
+};
