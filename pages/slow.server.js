@@ -49,5 +49,5 @@ export default function News() {
 }
 
 export const config = {
-  runtime: 'experimental-edge',
+  runtime: 'nodejs',
 };
