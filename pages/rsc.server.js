@@ -5,7 +5,6 @@ import { Suspense } from 'react';
 import Page from '../components/page.client';
 import Post from '../components/post.client';
 import Footer from '../components/footer.client';
-import ErrorPlaceholder from '../components/error-placeholder.client';
 
 // Server Components
 import SystemInfo from '../components/server-info.server';
@@ -31,7 +30,6 @@ function NewsWithData() {
 
   return (
     <>
-      {!postData ? <ErrorPlaceholder error={error} /> : null}
       {postData?.data?.slice(0, 30).map((post) => {
         return <StoryWithData id={post.id} key={post.id} />;
       })}

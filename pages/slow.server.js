@@ -7,7 +7,6 @@ import SystemInfo from '../components/server-info.server';
 // Client Components
 import Page from '../components/page.client';
 import Footer from '../components/footer.client';
-import ErrorPlaceholder from '../components/error-placeholder.client';
 import Post from '../components/post.client';
 
 // Utils
@@ -32,7 +31,6 @@ function NewsWithData() {
 
   return (
     <>
-      {!postData ? <ErrorPlaceholder error={error} /> : null}
       {postData?.data?.slice(0, 30).map((post) => {
         return <StoryWithData id={post.id} key={post.id} />;
       })}
